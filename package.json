@@ -1,21 +1,19 @@
 {
   "author": "aleksandr-kiliushin",
-  "name": "blog",
-  "version": "1.0.0",
   "description": "Aleksandr Kiliushin's blog.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.0"
   },
+  "keywords": [],
+  "license": "ISC",
+  "name": "blog",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aleksandr-kiliushin/blog.git"
   },
-  "keywords": [],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aleksandr-kiliushin/blog/issues"
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve"
   },
-  "devDependencies": {
-    "@11ty/eleventy": "2.0.0"
-  }
+  "version": "1.0.0"
 }
