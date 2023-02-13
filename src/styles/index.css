@@ -185,10 +185,10 @@ select {
   color: var(--primary-main);
 }
 
-.profile {
+/* .profile {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .profile__image-wrapper picture {
   display: flex;
@@ -423,11 +423,6 @@ select {
   background-color: var(--slate-600);
 }
 
-.bio {
-  margin: 0 auto 4rem auto;
-  max-width: 65ch;
-}
-
 .contact__sub-heading {
   padding: 0 1rem;
   color: var(--slate-600);
@@ -480,9 +475,9 @@ select {
     margin-bottom: 0;
   }
 
-  .profile {
+  /* .profile {
     flex-direction: row;
-  }
+  } */
 
   .profile__image-wrapper img {
     margin: 4rem;
