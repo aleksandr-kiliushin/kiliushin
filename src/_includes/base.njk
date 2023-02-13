@@ -14,35 +14,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{'/css/style.css' | url | safe}}">
+    <link rel="stylesheet" href="{{'/css/index.css' | url | safe}}">
   </head>
   <body>
     <div class="content">
-      <header class="header container">
-        <h1 class="header__title">
-          <a href="/">Aleksandr Kiliushin</a>
-        </h1>
-        <ul class="header__links">
-          <li>
-            <a class="header__link" href="/">Home</a>
-          </li>
-          <li>
-            <a class="header__link" href="/algorithms">Algorithms</a>
-          </li>
-          <li>
-            <a class="header__link" href="/about">About</a>
-          </li>
-          <li>
-            <a class="header__link" href="/contacts">Contacts</a>
-          </li>
-        </ul>
-      </header>
+      {% include "header.njk" %}
       <main class="main container">
         {{ content | safe }}
       </main>
     </div>
-    <footer class="footer">
-      <p>&copy; Aleksandr Kiliushin 2023</p>
-    </footer>
+    {% include "footer.njk" %}
   </body>
 </html>
