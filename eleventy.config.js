@@ -1,8 +1,9 @@
-module.exports = (defaultEleventyConfig) => {
-  defaultEleventyConfig.addPassthroughCopy("./src/css/")
-  defaultEleventyConfig.addWatchTarget("./src/css/")
-  defaultEleventyConfig.addPassthroughCopy("./src/images/")
-  defaultEleventyConfig.addPassthroughCopy({ "./src/favicons": "/" })
+module.exports = (eleventyConfig) => {
+  eleventyConfig.addPassthroughCopy("./src/css/")
+  eleventyConfig.addWatchTarget("./src/css/")
+  eleventyConfig.addPassthroughCopy("./src/images/")
+  eleventyConfig.addPassthroughCopy({ "./src/favicons": "/" })
+  eleventyConfig.addShortcode("currenYear", () => new Date().getFullYear().toString())
 
   return {
     dir: {

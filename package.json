@@ -3,21 +3,21 @@
   "description": "Aleksandr Kiliushin's blog.",
   "devDependencies": {
     "@11ty/eleventy": "2.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@trivago/prettier-plugin-sort-imports": "4.0.0",
     "eslint": "8.34.0",
     "husky": "8.0.3",
     "prettier": "2.8.4"
   },
   "keywords": [],
   "license": "ISC",
-  "name": "blog",
+  "name": "kiliushin",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aleksandr-kiliushin/blog.git"
   },
   "scripts": {
     "build": "rm -rf ./dist && npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve",
+    "dev": "rm -rf ./dist && npx @11ty/eleventy --serve",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
