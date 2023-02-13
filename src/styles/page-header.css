@@ -18,6 +18,6 @@
 .page-header nav ul {
   display: grid;
   grid-auto-flow: column;
-  column-gap: 12px;
+  column-gap: 16px;
   font-size: 1.8rem;
 }
