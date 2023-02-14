@@ -24,8 +24,8 @@ body {
 
 main {
   max-width: 1024px;
-  margin: 60px 80px 0;
-  padding: 8px;
+  margin: 60px auto 0;
+  padding: 8px 16px;
   overflow-y: scroll;
 }
 
