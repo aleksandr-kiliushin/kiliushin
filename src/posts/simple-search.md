@@ -1,9 +1,10 @@
 ---
 title: "Simple search"
 summary: "The most simple algorithm visualized."
-tags:
+labels:
   - "Algorithms"
   - "Visualization"
+date: 2023-02-10
 ---
 
 ### Problem Solved

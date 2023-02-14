@@ -1,15 +1,29 @@
-.post-tags {
+.posts-list {
+  display: grid;
+  row-gap: 16px;
+}
+
+.post-card {
+  display: grid;
+  row-gap: 4px;
+}
+
+.post-labels {
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
-  gap: 4px;
+  column-gap: 4px;
 }
 
-.post-tag {
+.post-label {
   display: flex;
   background-color: var(--secondary-light);
   color: var(--secondary-dark);
 }
-.post-tag::before {
+.post-label::before {
   content: "#";
+}
+
+.post-date {
+  color: var(--slate-600);
 }

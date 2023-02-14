@@ -1,10 +1,11 @@
 ---
 title: "Event propagation"
 summary: "Event propagation visualized."
-tags:
+labels:
   - "Web"
   - "Browsers"
   - "Visualization"
+date: 2023-02-11
 ---
 
 ### Problem Solved

@@ -323,13 +323,6 @@ select {
   height: 20px;
 }
 
-.posts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 42rem;
-}
-
 .post__image-wrapper img {
   width: 100%;
   height: auto;

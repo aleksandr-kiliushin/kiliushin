@@ -1,9 +1,10 @@
 ---
 title: "Binary search"
 summary: "Binary search algorithm visualized."
-tags:
+labels:
   - "Algorithms"
   - "Visualization"
+date: 2023-02-12
 ---
 
 ### Problem Solved
