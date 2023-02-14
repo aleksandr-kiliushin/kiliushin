@@ -12,12 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{'/styles/index.css' | url | safe}}">
-    <link rel="stylesheet" href="{{'/styles/page-header.css' | url | safe}}">
     <link rel="stylesheet" href="{{'/styles/posts.css' | url | safe}}">
     <link rel="stylesheet" href="{{'/styles/profile.css' | url | safe}}">
+    <link rel="stylesheet" href="{{'/_includes/base.css' | url | safe}}">
+    <link rel="stylesheet" href="{{'/_includes/page-header.css' | url | safe}}">
   </head>
   <body>
-    {% include "header.njk" %}
+    {% include "page-header.njk" %}
     <main>
       {{ content | safe }}
     </main>
