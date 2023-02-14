@@ -27,3 +27,8 @@
 .post-date {
   color: var(--slate-600);
 }
+
+.post {
+  display: grid;
+  row-gap: 12px;
+}
