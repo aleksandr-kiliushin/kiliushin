@@ -369,7 +369,7 @@ select {
   text-decoration: underline;
 }
 
-.post-list {
+.posts-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
