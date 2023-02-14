@@ -1,0 +1,13 @@
+---
+layout: "base.njk"
+---
+
+<div class="post">
+  <h2 class="post__heading">{{ title }}</h2>
+  <div class="post__image-wrapper">
+      <img class="post__image" src="{{ image }}" alt="{{ imageAlt }}">
+  </div>
+  <div class="post__content prose">
+    {{ content | safe }}
+  </div>
+</div>

@@ -1,8 +1,9 @@
 ---
-title: "Blog"
+title: "posts"
 layout: "base.njk"
 ---
 
+<h2 class="posts__heading">Recent posts</h2>
 <div class="post-list">
   {% for post in collections.posts %}
     {% include "post-card.njk" %}

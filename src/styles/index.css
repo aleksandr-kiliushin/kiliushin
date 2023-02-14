@@ -276,11 +276,11 @@ select {
   color: var(--slate-600);
 }
 
-.projects {
+.posts {
   margin: 2rem auto 4rem auto;
 }
 
-.projects__heading {
+.posts__heading {
   margin-bottom: 2rem;
   font-size: 2.5rem;
   font-weight: 700;
@@ -288,26 +288,26 @@ select {
   color: var(--primary-main);
 }
 
-.project__heading {
+.post__heading {
   padding: 1rem 0;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-main);
 }
 
-.project-grid {
+.post-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.project-card {
+.post-card {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   border-radius: 0.375rem;
   overflow: hidden;
 }
 
-.project-card__image-wrapper img {
+.post-card__image-wrapper img {
   width: 100%;
   height: auto;
   border-top-left-radius: 0.375rem;
@@ -315,31 +315,31 @@ select {
   transition: transform 0.3s ease 0s;
 }
 
-.project-card__image-wrapper:hover img {
+.post-card__image-wrapper:hover img {
   transform: scale(1.05);
 }
 
-.project-card__body {
+.post-card__body {
   padding: 1rem;
 }
 
-.project-card__title {
+.post-card__title {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
 }
 
-.project-card__title:hover {
+.post-card__title:hover {
   text-decoration: underline;
 }
 
-.project-card__tags {
+.post-card__tags {
   margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
 }
 
-.project-card__tag {
+.post-card__tag {
   display: flex;
   padding: 0.25rem 0.5rem;
   border-radius: 9999px;
@@ -348,28 +348,28 @@ select {
   color: var(--amber-800);
 }
 
-.project-card__summary {
+.post-card__summary {
   margin-bottom: 1rem;
   color: var(--slate-600);
 }
 
-.project-card__link {
+.post-card__link {
   display: inline-flex;
   align-items: center;
   font-weight: 600;
   color: var(--primary-main);
 }
 
-.project-card__link-icon {
+.post-card__link-icon {
   width: 20px;
   height: 20px;
 }
 
-.project-card__link:hover {
+.post-card__link:hover {
   text-decoration: underline;
 }
 
-.project-list {
+.post-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -377,15 +377,15 @@ select {
   margin: 0 auto 4rem auto;
 }
 
-.project {
+.post {
   margin-bottom: 4rem;
 }
 
-.project__image-wrapper {
+.post__image-wrapper {
   margin-bottom: 1.5rem;
 }
 
-.project__image-wrapper img {
+.post__image-wrapper img {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;

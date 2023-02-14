@@ -1,0 +1,8 @@
+<section class="posts">
+  <h2 class="post__heading">Recent posts</h2>
+  <div class="post-grid">
+    {% for post in collections.posts %}
+      {% include "post-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
