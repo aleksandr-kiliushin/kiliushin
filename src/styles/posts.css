@@ -1,0 +1,15 @@
+.post-tags {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 4px;
+}
+
+.post-tag {
+  display: flex;
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+}
+.post-tag::before {
+  content: "#";
+}
