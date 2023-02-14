@@ -1,17 +1,25 @@
-document.querySelectorAll(".element").forEach((element) => {
+const queryResultContainer = () => {
+  const resultContainer = document.querySelector("span#result")
+  if (!(resultContainer instanceof HTMLSpanElement)) throw new Error()
+  return resultContainer
+}
+
+const queryElements = () => document.querySelectorAll(".element")
+
+queryElements().forEach((element) => {
   element.style.height = parseInt(element.innerText) * 2 + "px"
 })
 
 document.querySelector("button#search").addEventListener("click", () => {
-  document.querySelector("span#result").innerText = "--"
+  queryResultContainer().innerText = "--"
   const valueToSearchFor = document.querySelector("input").value
-  document.querySelectorAll(".element").forEach((element, elementIndex) => {
+  queryElements().forEach((element, elementIndex) => {
     if (element.innerText === valueToSearchFor) {
       element.style.border = "2px solid red"
-      document.querySelector("span#result").innerText = elementIndex
+      queryResultContainer().innerText = elementIndex
     }
   })
-  if (document.querySelector("span#result").innerText === "--") {
-    document.querySelector("span#result").innerText = "null"
+  if (queryResultContainer().innerText === "--") {
+    queryResultContainer().innerText = "null"
   }
 })
