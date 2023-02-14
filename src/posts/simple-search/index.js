@@ -22,6 +22,9 @@ const promises = queryElements().map((element, elementIndex) => {
 
 document.querySelector("button#search").addEventListener("click", async () => {
   queryResultContainer().innerText = "--"
+  queryElements().forEach((element) => {
+    element.style.border = "1px solid black"
+  })
 
   const valueToSearchFor = document.querySelector("input").value
 
