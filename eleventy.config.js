@@ -1,6 +1,6 @@
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy("./src/**/*.css")
-  eleventyConfig.addWatchTarget("./src/**/*.css")
+  eleventyConfig.addPassthroughCopy("./src/**/*.{css,js}")
+  eleventyConfig.addWatchTarget("./src/**/*.{css,js}")
   eleventyConfig.addPassthroughCopy("./src/images/")
   eleventyConfig.addPassthroughCopy({ "./src/favicons": "/" })
 
