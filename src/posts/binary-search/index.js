@@ -48,7 +48,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
   await wait()
 
   let indexToSearchFrom = 0
-  let indexToSearchTo = queryElements().length
+  let indexToSearchTo = queryElements().length - 1
   let middleIndex
   let valueAtMiddleIndex
 
@@ -82,6 +82,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
     await wait()
     queryResultContainer().innerText = "null"
+    return
   }
 
   document.querySelector(
@@ -156,6 +157,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
     await wait()
     queryResultContainer().innerText = "null"
+    return
   }
 
   document.querySelector(
@@ -230,6 +232,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
     await wait()
     queryResultContainer().innerText = "null"
+    return
   }
 
   document.querySelector(
@@ -304,6 +307,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
     await wait()
     queryResultContainer().innerText = "null"
+    return
   }
 
   document.querySelector(
@@ -378,6 +382,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
     await wait()
     queryResultContainer().innerText = "null"
+    return
   }
 
   document.querySelector(
@@ -410,6 +415,7 @@ document.querySelector("button#search").addEventListener("click", async () => {
     await wait()
     document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
     await wait()
+    return
   }
 
   queryElements()[middleIndex].style.border = "1px solid black"
@@ -421,10 +427,4 @@ document.querySelector("button#search").addEventListener("click", async () => {
     }
   })
   /* Iteration 5. END. ========================================================================== */
-
-  document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-
-  queryResultContainer().innerText = "null"
 })
