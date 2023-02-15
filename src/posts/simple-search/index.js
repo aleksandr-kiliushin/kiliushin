@@ -44,12 +44,19 @@ document.querySelector("button#search").addEventListener("click", async () => {
     await wait(500)
     element.style.border = "1px solid black"
 
-    element.style.border = "1px solid black"
     if (element.innerText === valueToSearchFor) {
+      await wait(500)
+      document.querySelector("#returning-found-value-index-code-line").style.backgroundColor = "gray"
+      await wait(500)
+      document.querySelector("#returning-found-value-index-code-line").style.backgroundColor = "white"
+      await wait(500)
       element.style.border = "2px solid red"
+      await wait(500)
       queryResultContainer().innerText = String(elementIndex)
       return
     }
+
+    element.style.border = "1px solid black"
   }
 
   document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
