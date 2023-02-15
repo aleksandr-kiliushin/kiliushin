@@ -24,16 +24,17 @@ document.querySelector("button#search").addEventListener("click", async () => {
     element.style.border = "1px solid black"
   })
 
-  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "gray"
-  await wait(500)
-  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "white"
-  await wait(500)
-
   const valueToSearchFor = document.querySelector("input").value
 
   document.querySelector("#values-comparison-code-line").innerText = document
     .querySelector("#values-comparison-code-line")
     .innerText.replace("___", valueToSearchFor)
+    .replace(/\d+/, valueToSearchFor)
+
+  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "gray"
+  await wait(500)
+  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "white"
+  await wait(500)
 
   for await (const { element, elementIndex } of promises) {
     element.style.border = "3px solid black"
