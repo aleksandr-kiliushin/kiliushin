@@ -3,13 +3,11 @@ const wait = (duration) => {
     setTimeout(resolve, duration)
   })
 }
-
 const queryResultContainer = () => {
   const resultContainer = document.querySelector("span#result")
   if (!(resultContainer instanceof HTMLSpanElement)) throw new Error()
   return resultContainer
 }
-
 const queryElements = () => Array.from(document.querySelectorAll(".element"))
 
 queryElements().forEach((element) => {
@@ -26,10 +24,22 @@ document.querySelector("button#search").addEventListener("click", async () => {
     element.style.border = "1px solid black"
   })
 
+  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "gray"
+  await wait(500)
+  document.querySelector("#loop-initialization-code-line").style.backgroundColor = "white"
+  await wait(500)
+
   const valueToSearchFor = document.querySelector("input").value
+
+  document.querySelector("#values-comparison-code-line").innerText = document
+    .querySelector("#values-comparison-code-line")
+    .innerText.replace("___", valueToSearchFor)
 
   for await (const { element, elementIndex } of promises) {
     element.style.border = "3px solid black"
+    document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
+    await wait(500)
+    document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
     await wait(500)
     element.style.border = "1px solid black"
 
@@ -40,6 +50,10 @@ document.querySelector("button#search").addEventListener("click", async () => {
       return
     }
   }
+
+  document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
+  await wait(500)
+  document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
 
   queryResultContainer().innerText = "null"
 })
