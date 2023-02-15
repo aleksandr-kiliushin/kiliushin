@@ -52,379 +52,79 @@ document.querySelector("button#search").addEventListener("click", async () => {
   let middleIndex
   let valueAtMiddleIndex
 
-  /* Iteration 1. START. ======================================================================== */
-  middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
-  valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
-  queryElements()[middleIndex].style.border = "3px solid black"
-  await wait()
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
+    valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
+    queryElements()[middleIndex].style.border = "3px solid black"
+    await wait()
 
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
-  await wait()
-  if (valueToSearchFor === valueAtMiddleIndex) {
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
+    document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
     await wait()
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
+    document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
     await wait()
-    queryElements()[middleIndex].style.border = "2px solid red"
-    await wait()
-    queryResultContainer().innerText = middleIndex
-    return
-  }
+    if (valueToSearchFor === valueAtMiddleIndex) {
+      document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
+      await wait()
+      document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
+      await wait()
+      queryElements()[middleIndex].style.border = "2px solid red"
+      await wait()
+      queryResultContainer().innerText = middleIndex
+      return
+    }
 
-  if (indexToSearchFrom === indexToSearchTo) {
-    queryElements()[middleIndex].style.opacity = 0.3
+    if (indexToSearchFrom === indexToSearchTo) {
+      queryElements()[middleIndex].style.opacity = 0.3
+      queryElements()[middleIndex].style.border = "1px solid black"
+      await wait()
+      document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
+      await wait()
+      document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
+      await wait()
+      queryResultContainer().innerText = "null"
+      return
+    }
+
+    document.querySelector(
+      "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
+    ).style.backgroundColor = "gray"
+    await wait()
+    document.querySelector(
+      "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
+    ).style.backgroundColor = "white"
+    await wait()
+    if (valueAtMiddleIndex > valueToSearchFor) {
+      indexToSearchTo = middleIndex - 1
+      document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
+      await wait()
+      document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
+      await wait()
+    }
+
+    document.querySelector(
+      "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
+    ).style.backgroundColor = "gray"
+    await wait()
+    document.querySelector(
+      "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
+    ).style.backgroundColor = "white"
+    await wait()
+    if (valueAtMiddleIndex < valueToSearchFor) {
+      indexToSearchFrom = middleIndex + 1
+      document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
+      await wait()
+      document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
+      await wait()
+    }
+
     queryElements()[middleIndex].style.border = "1px solid black"
     await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-    await wait()
-    queryResultContainer().innerText = "null"
-    return
+
+    queryElements().forEach((element, elementIndex) => {
+      if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
+        element.style.opacity = "0.3"
+      }
+    })
   }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex > valueToSearchFor) {
-    indexToSearchTo = middleIndex - 1
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex < valueToSearchFor) {
-    indexToSearchFrom = middleIndex + 1
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  queryElements()[middleIndex].style.border = "1px solid black"
-  await wait()
-
-  queryElements().forEach((element, elementIndex) => {
-    if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
-      element.style.opacity = "0.3"
-    }
-  })
-  /* Iteration 1. END. ========================================================================== */
-
-  /* Iteration 2. START. ======================================================================== */
-  middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
-  valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
-  queryElements()[middleIndex].style.border = "3px solid black"
-  await wait()
-
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
-  await wait()
-  if (valueToSearchFor === valueAtMiddleIndex) {
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
-    await wait()
-    queryElements()[middleIndex].style.border = "2px solid red"
-    await wait()
-    queryResultContainer().innerText = middleIndex
-    return
-  }
-
-  if (indexToSearchFrom === indexToSearchTo) {
-    queryElements()[middleIndex].style.opacity = 0.3
-    queryElements()[middleIndex].style.border = "1px solid black"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-    await wait()
-    queryResultContainer().innerText = "null"
-    return
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex > valueToSearchFor) {
-    indexToSearchTo = middleIndex - 1
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex < valueToSearchFor) {
-    indexToSearchFrom = middleIndex + 1
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  queryElements()[middleIndex].style.border = "1px solid black"
-  await wait()
-
-  queryElements().forEach((element, elementIndex) => {
-    if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
-      element.style.opacity = "0.3"
-    }
-  })
-  /* Iteration 2. END. ========================================================================== */
-
-  /* Iteration 3. START. ======================================================================== */
-  middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
-  valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
-  queryElements()[middleIndex].style.border = "3px solid black"
-  await wait()
-
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
-  await wait()
-  if (valueToSearchFor === valueAtMiddleIndex) {
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
-    await wait()
-    queryElements()[middleIndex].style.border = "2px solid red"
-    await wait()
-    queryResultContainer().innerText = middleIndex
-    return
-  }
-
-  if (indexToSearchFrom === indexToSearchTo) {
-    queryElements()[middleIndex].style.opacity = 0.3
-    queryElements()[middleIndex].style.border = "1px solid black"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-    await wait()
-    queryResultContainer().innerText = "null"
-    return
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex > valueToSearchFor) {
-    indexToSearchTo = middleIndex - 1
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex < valueToSearchFor) {
-    indexToSearchFrom = middleIndex + 1
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  queryElements()[middleIndex].style.border = "1px solid black"
-  await wait()
-
-  queryElements().forEach((element, elementIndex) => {
-    if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
-      element.style.opacity = "0.3"
-    }
-  })
-  /* Iteration 3. END. ========================================================================== */
-
-  /* Iteration 4. START. ======================================================================== */
-  middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
-  valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
-  queryElements()[middleIndex].style.border = "3px solid black"
-  await wait()
-
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
-  await wait()
-  if (valueToSearchFor === valueAtMiddleIndex) {
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
-    await wait()
-    queryElements()[middleIndex].style.border = "2px solid red"
-    await wait()
-    queryResultContainer().innerText = middleIndex
-    return
-  }
-
-  if (indexToSearchFrom === indexToSearchTo) {
-    queryElements()[middleIndex].style.opacity = 0.3
-    queryElements()[middleIndex].style.border = "1px solid black"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-    await wait()
-    queryResultContainer().innerText = "null"
-    return
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex > valueToSearchFor) {
-    indexToSearchTo = middleIndex - 1
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex < valueToSearchFor) {
-    indexToSearchFrom = middleIndex + 1
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  queryElements()[middleIndex].style.border = "1px solid black"
-  await wait()
-
-  queryElements().forEach((element, elementIndex) => {
-    if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
-      element.style.opacity = "0.3"
-    }
-  })
-  /* Iteration 4. END. ========================================================================== */
-
-  /* Iteration 5. START. ======================================================================== */
-  middleIndex = indexToSearchFrom + Math.floor((indexToSearchTo - indexToSearchFrom) / 2)
-  valueAtMiddleIndex = parseInt(queryElements()[middleIndex].innerText)
-  queryElements()[middleIndex].style.border = "3px solid black"
-  await wait()
-
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "gray"
-  await wait()
-  document.querySelector("#values-comparison-code-line").style.backgroundColor = "white"
-  await wait()
-  if (valueToSearchFor === valueAtMiddleIndex) {
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-found-index-code-line").style.backgroundColor = "white"
-    await wait()
-    queryElements()[middleIndex].style.border = "2px solid red"
-    await wait()
-    queryResultContainer().innerText = middleIndex
-    return
-  }
-
-  if (indexToSearchFrom === indexToSearchTo) {
-    queryElements()[middleIndex].style.opacity = 0.3
-    queryElements()[middleIndex].style.border = "1px solid black"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#returning-null-code-line").style.backgroundColor = "white"
-    await wait()
-    queryResultContainer().innerText = "null"
-    return
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-greater-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex > valueToSearchFor) {
-    indexToSearchTo = middleIndex - 1
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-to-code-line").style.backgroundColor = "white"
-    await wait()
-  }
-
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "gray"
-  await wait()
-  document.querySelector(
-    "#checking-if-value-at-middle-index-is-less-than-current-value-code-line"
-  ).style.backgroundColor = "white"
-  await wait()
-  if (valueAtMiddleIndex < valueToSearchFor) {
-    indexToSearchFrom = middleIndex + 1
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "gray"
-    await wait()
-    document.querySelector("#reassigning-index-to-search-from-code-line").style.backgroundColor = "white"
-    await wait()
-    return
-  }
-
-  queryElements()[middleIndex].style.border = "1px solid black"
-  await wait()
-
-  queryElements().forEach((element, elementIndex) => {
-    if (elementIndex < indexToSearchFrom || elementIndex > indexToSearchTo) {
-      element.style.opacity = "0.3"
-    }
-  })
-  /* Iteration 5. END. ========================================================================== */
 })
