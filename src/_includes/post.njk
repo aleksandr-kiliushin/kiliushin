@@ -3,14 +3,14 @@ layout: "base.njk"
 ---
 
 <div class="post">
-  <h2>{{ title }}</h2>
-  <div class="post__content prose">
-    {{ content | safe }}
+  <div class="post-header">
+    <h2>{{ title }}</h2>
+    <div class="post-labels">
+      {% for label in labels %}
+        <span class="post-label">{{ label }}</span>
+      {% endfor %}
+    </div>
+    <span class="post-date">{{ date.toUTCString().substring(5, 16) }}</span>
   </div>
-  <div class="post-labels">
-    {% for label in labels %}
-      <span class="post-label">{{ label }}</span>
-    {% endfor %}
-  </div>
-  <p class="post-date">{{ date.toUTCString().substring(5, 16) }}</p>
+  {{ content | safe }}
 </div>
