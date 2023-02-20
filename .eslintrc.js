@@ -10,7 +10,7 @@ module.exports = {
   rules: {
     "arrow-parens": 1,
     camelcase: 1,
-    "max-params": ["error", 3],
+    "max-params": ["error", 2],
     "no-duplicate-imports": 1,
     "no-restricted-syntax": [
       1,
