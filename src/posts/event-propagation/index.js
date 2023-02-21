@@ -1,8 +1,8 @@
 const elementsIds = ["html", "body", "form", "input", "textarea", "button"]
 
-let eventsAmount = 0
+let eventOccurings = []
 
-const toggleArrow = ({ currentTargetId, phase }) => {
+const showEventDirection = ({ currentTargetId, phase }) => {
   let arrow = null
 
   if (phase === "capturing") {
@@ -47,32 +47,32 @@ elementsIds.forEach((elementId) => {
   const element = document.querySelector(`.demo #${elementId}`)
   element.addEventListener(
     "click",
-    () => {
-      eventsAmount += 1
+    (event) => {
+      eventOccurings.push(event)
       setTimeout(() => {
         element.classList.add("active")
-      }, eventsAmount * 1500 + 500)
+      }, eventOccurings.length * 1500 + 500)
       setTimeout(() => {
-        toggleArrow({ currentTargetId: elementId, phase: "capturing" })
-      }, eventsAmount * 1500)
+        showEventDirection({ currentTargetId: elementId, phase: "capturing" })
+      }, eventOccurings.length * 1500)
       setTimeout(() => {
         element.classList.remove("active")
-        eventsAmount -= 1
-      }, eventsAmount * 1500 + 1500)
+        eventOccurings.shift()
+      }, eventOccurings.length * 1500 + 1500)
     },
     { capture: true }
   )
-  element.addEventListener("click", () => {
-    eventsAmount += 1
+  element.addEventListener("click", (event) => {
+    eventOccurings.push(event)
     setTimeout(() => {
       element.classList.add("active")
-    }, eventsAmount * 1500 + 500)
+    }, eventOccurings.length * 1500 + 500)
     setTimeout(() => {
-      toggleArrow({ currentTargetId: elementId, phase: "bubbling" })
-    }, eventsAmount * 1500)
+      showEventDirection({ currentTargetId: elementId, phase: "bubbling" })
+    }, eventOccurings.length * 1500)
     setTimeout(() => {
       element.classList.remove("active")
-      eventsAmount -= 1
-    }, eventsAmount * 1500 + 1500)
+      eventOccurings.shift()
+    }, eventOccurings.length * 1500 + 1500)
   })
 })
