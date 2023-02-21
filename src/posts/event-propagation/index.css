@@ -1,4 +1,5 @@
 .demo {
+  position: relative;
   width: 100%;
   max-width: 500px;
   margin: 40px auto;
@@ -59,4 +60,10 @@
 .active {
   background: linear-gradient(-45deg, orange, red, blue, green) !important;
   background-size: 200% 200%;
+}
+
+.arrow {
+  position: absolute;
+  right: -52px;
+  top: -32px;
 }
