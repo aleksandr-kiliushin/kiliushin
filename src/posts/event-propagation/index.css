@@ -64,6 +64,10 @@
 
 .arrow {
   position: absolute;
+}
+
+#arrow-from-html-to-body,
+#arrow-from-body-to-html {
   right: -52px;
   top: -32px;
 }
