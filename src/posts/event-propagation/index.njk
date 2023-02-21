@@ -1,0 +1,49 @@
+---
+title: "Event propagation"
+summary: "Event propagation visualized."
+labels:
+  - "Web"
+  - "Browsers"
+  - "Visualization"
+date: 2023-02-21
+---
+
+<div>
+  <div class="elements-container">
+    <div class="element">10</div>
+    <div class="element">20</div>
+    <div class="element">30</div>
+    <div class="element">40</div>
+    <div class="element">50</div>
+    <div class="element">60</div>
+    <div class="element">70</div>
+    <div class="element">80</div>
+    <div class="element">90</div>
+    <div class="element">100</div>
+  </div>
+
+  <br/>
+  <input type="number" />
+  <button id="search">Search</button>
+  <span>Result:</span>
+  <span id="result">--</span>
+
+  <div></div>
+  <br/>
+  <pre>
+    <span id="index-to-search-from-initialization-code-line">let indexToSearchFrom = 0</span>
+    <span id="index-to-search-to-initialization-code-line">let indexToSearchTo = elements.length</span>
+    <span id="middle-index-initialization-code-line">let middleIndex = Math.floor((indexToSearchTo - indexToSearchFrom) / 2)</span>
+    <span id="loop-initialization-code-line">while (indexToSearchFrom !== indexToSearchTo) {</span>
+      <span id="values-comparison-code-line">if (elements[middleIndex] === <span class="value-to-search-for">___</span>) {</span>
+        <span id="returning-found-index-code-line">return middleIndex</span>
+      <span id="checking-if-value-at-middle-index-is-greater-than-current-value-code-line">} else if (elements[middleIndex] &gt; <span class="value-to-search-for">___</span>) {</span>
+        <span id="reassigning-index-to-search-to-code-line">indexToSearchTo = middleIndex - 1</span>
+      <span id="checking-if-value-at-middle-index-is-less-than-current-value-code-line">} else if (elements[middleIndex] &lt; <span class="value-to-search-for">___</span>) {</span>
+        <span id="reassigning-index-to-search-from-code-line">indexToSearchFrom = middleIndex + 1</span>
+      }
+    }
+    <span id="returning-null-code-line">return null</span>
+  </pre>
+</div>
+<script src="./index.js"></script>
