@@ -64,6 +64,7 @@
 
 .arrow {
   position: absolute;
+  visibility: hidden;
 }
 
 #arrow-from-html-to-body,
