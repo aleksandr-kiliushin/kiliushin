@@ -4,24 +4,41 @@
   margin: 40px auto;
 }
 
+.flaked-off-layer {
+  transform: translate(-28px, -28px);
+}
+
 .demo #html {
-  padding: 40px;
+  padding: 12px;
   background-color: antiquewhite;
   border: 2px solid darkgoldenrod;
+  transform: rotate(10deg) skew(-15deg, -10deg);
+}
+.demo #html::after {
+  content: "html";
+  color: darkgoldenrod;
 }
 
 .demo #body {
-  padding: 40px;
+  padding: 12px;
   background-color: darkseagreen;
   border: 2px solid forestgreen;
 }
+.demo #body::after {
+  content: "body";
+  color: forestgreen;
+}
 
 .demo #form {
-  padding: 40px;
+  padding: 12px;
   display: grid;
   row-gap: 12px;
   background-color: cornflowerblue;
   border: 2px solid blue;
+}
+.demo #form::after {
+  content: "form";
+  color: blue;
 }
 
 .demo #input {
