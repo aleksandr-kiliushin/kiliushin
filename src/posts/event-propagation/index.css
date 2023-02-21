@@ -6,6 +6,7 @@
 
 .flaked-off-layer {
   transform: translate(-28px, -28px);
+  box-shadow: 28px 28px #00000044;
 }
 
 .demo #html {
