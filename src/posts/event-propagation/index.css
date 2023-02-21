@@ -71,3 +71,27 @@
   right: -52px;
   top: -32px;
 }
+
+#arrow-from-body-to-form,
+#arrow-from-form-to-body {
+  right: -16px;
+  top: -46px;
+}
+
+#arrow-from-form-to-input,
+#arrow-from-input-to-form {
+  right: 20px;
+  top: -60px;
+}
+
+#arrow-from-form-to-textarea,
+#arrow-from-textarea-to-form {
+  right: 36px;
+  top: -20px;
+}
+
+#arrow-from-form-to-button,
+#arrow-from-button-to-form {
+  right: 64px;
+  top: 44px;
+}
