@@ -1,13 +1,39 @@
-.elements-container {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: end;
-  justify-content: start;
-  column-gap: 12px;
+.demo {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
 }
 
-.element {
-  width: 32px;
-  border: 1px solid black;
-  text-align: center;
+.demo #html {
+  padding: 40px;
+  background-color: antiquewhite;
+  border: 2px solid darkgoldenrod;
+}
+
+.demo #body {
+  padding: 40px;
+  background-color: darkseagreen;
+  border: 2px solid forestgreen;
+}
+
+.demo #form {
+  padding: 40px;
+  display: grid;
+  row-gap: 12px;
+  background-color: cornflowerblue;
+  border: 2px solid blue;
+}
+
+.demo #input {
+  height: 28px;
+}
+
+.demo #textarea {
+  height: 56px;
+}
+
+.demo #button {
+  justify-self: end;
+  height: 28px;
+  padding: 0 12px;
 }
