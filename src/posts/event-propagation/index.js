@@ -7,11 +7,9 @@ const wait = (duration) => {
 }
 
 const highlightLayer = ({ layerId }) => {
-  console.log("Layer highlighting ON:", Date.now() - startDate)
   const layer = document.querySelector(`.demo #${layerId}`)
   layer.classList.add("active")
   setTimeout(() => {
-    console.log("Layer highlighting OFF:", Date.now() - startDate)
     layer.classList.remove("active")
   }, 2000)
 }
@@ -20,11 +18,9 @@ const showEventDirection = ({ from, to }) => {
   if (from === to) return
   const arrow = document.querySelector(`#arrow-from-${from}-to-${to}`)
   setTimeout(() => {
-    console.log("Arrow highlighting ON:", Date.now() - startDate)
     arrow.style.visibility = "visible"
   }, 1500)
   setTimeout(() => {
-    console.log("Arrow highlighting OFF:", Date.now() - startDate)
     arrow.style.visibility = "hidden"
   }, 3500)
 }
