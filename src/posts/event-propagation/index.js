@@ -1,5 +1,3 @@
-let startDate = Date.now()
-
 const wait = (duration) => {
   return new Promise((resolve) => {
     setTimeout(resolve, duration)
@@ -51,7 +49,6 @@ elementsIds.forEach((elementId) => {
 
 document.querySelector(".demo #html").addEventListener("click", () => {
   setTimeout(async () => {
-    startDate = Date.now()
     const eventOccuringsMoves = []
     for (const eventOccuringIndex in eventOccurings) {
       const currentEventOccuring = eventOccurings[eventOccuringIndex]

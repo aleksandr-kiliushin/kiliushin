@@ -4,6 +4,11 @@
   max-width: 500px;
   margin: 40px auto;
 }
+@media (max-width: 480px) {
+  .demo {
+    max-width: 240px;
+  }
+}
 
 .flaked-off-layer {
   transform: translate(-28px, -28px);
