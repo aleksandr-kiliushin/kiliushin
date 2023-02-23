@@ -30,7 +30,7 @@
 
 .post {
   display: grid;
-  row-gap: 12px;
+  row-gap: 20px;
 }
 
 .post-header {

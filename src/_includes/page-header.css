@@ -21,4 +21,5 @@
   grid-auto-flow: column;
   column-gap: 16px;
   font-size: 1.8rem;
+  list-style: none;
 }
