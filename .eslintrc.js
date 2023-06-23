@@ -4,8 +4,29 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["eslint:recommended"],
+  extends: [
+    "eslint:recommended",
+		'plugin:@typescript-eslint/recommended',
+		'plugin:svelte/recommended',
+		'prettier'
+  ],
   ignorePatterns: ["dist", "node_modules"],
+	overrides: [
+		{
+			files: ['*.svelte'],
+			parser: 'svelte-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser'
+			}
+		}
+	],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		sourceType: 'module',
+		ecmaVersion: 2020,
+		extraFileExtensions: ['.svelte']
+	},
+	plugins: ['@typescript-eslint'],
   root: true,
   rules: {
     "arrow-parens": 1,
@@ -22,3 +43,7 @@ module.exports = {
     "no-tabs": 1,
   },
 }
+
+
+
+
