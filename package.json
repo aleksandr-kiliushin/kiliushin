@@ -1,27 +1,37 @@
 {
   "author": "aleksandr-kiliushin",
-  "description": "Aleksandr Kiliushin's blog.",
+  "description": "Aleksandr Kiliushin's personal website.",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0",
-    "@trivago/prettier-plugin-sort-imports": "4.0.0",
-    "eslint": "8.34.0",
-    "husky": "8.0.3",
-    "prettier": "2.8.4"
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "@sveltejs/adapter-auto": "2.1.0",
+    "@sveltejs/kit": "1.20.5",
+    "@typescript-eslint/eslint-plugin": "5.60.0",
+    "@typescript-eslint/parser": "5.60.0",
+    "eslint": "8.43.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-svelte": "2.31.0",
+    "prettier": "2.8.8",
+    "prettier-plugin-svelte": "2.10.1",
+    "svelte": "4.0.0",
+    "svelte-check": "3.4.4",
+    "tslib": "2.5.3",
+    "typescript": "5.1.3",
+    "vite": "4.3.9"
   },
-  "keywords": [],
-  "license": "ISC",
   "name": "kiliushin",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aleksandr-kiliushin/blog.git"
   },
-  "scripts": {
-    "build": "rm -rf ./dist && npx @11ty/eleventy",
-    "dev": "rm -rf ./dist && npx @11ty/eleventy --serve",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "lint-staged": "lint-staged",
-    "prepare": "husky install",
-    "prettier": "prettier --write \"**/*.{js,ts,tsx,json,md}\""
-  },
+  "type": "module",
   "version": "1.0.0"
 }
